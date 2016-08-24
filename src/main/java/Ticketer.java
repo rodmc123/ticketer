@@ -39,10 +39,8 @@ public class Ticketer {
                 aux.addAll(availableTickets);
                 availableTickets.clear();
             } else {
-                System.out.println(Thread.currentThread().getName() + " running");
                 aux = availableTickets.stream().limit(numberOfTickets).collect(Collectors.toSet());
                 availableTickets.removeAll(aux);
-                System.out.println(Thread.currentThread().getName() + " finished execution");
             }
         }
         return aux;
